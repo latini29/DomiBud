@@ -2,8 +2,8 @@
 body {
   margin: 0;
   font-family: 'Montserrat', Arial, sans-serif;
-  background: #f7f7f7;
-  color: #222;
+  background: #fffde7; /* bardzo jasny żółty */
+  color: #b71c1c; /* ciemnoczerwony tekst */
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -12,7 +12,7 @@ html, body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background: #f7f7f7;
+  background: #fffde7;
 }
 
 /* === Nawigacja === */
@@ -20,8 +20,8 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #1a237e;
-  color: #fff;
+  background: #ffd600; /* dominujący żółty */
+  color: #b71c1c; /* czerwony tekst */
   padding: 0.5rem 2rem;
   position: sticky;
   top: 0;
@@ -59,19 +59,19 @@ html, body {
   padding: 0;
 }
 .nav-links a {
-  color: #fff;
+  color: #b71c1c;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
 }
 .nav-links a:hover {
-  color: #ffb300;
+  color: #c62828; /* mocniejszy czerwony na hover */
 }
 
 /* === Nagłówek strony === */
 .hero {
-  background: linear-gradient(120deg, #3949ab 60%, #ffb300 100%);
-  color: #fff;
+  background: linear-gradient(120deg, #fffde7 60%, #ffd600 100%);
+  color: #b71c1c;
   text-align: center;
   padding: 5rem 2rem 3rem 2rem;
   animation: fadeIn 1.2s;
@@ -91,10 +91,10 @@ html, body {
 
 /* === Przycisk CTA === */
 .cta-btn {
-  background: #ffb300;
-  color: #222;
+  background: #ffd600;
+  color: #b71c1c;
   padding: 0.8rem 2rem;
-  border: none;
+  border: 2px solid #b71c1c;
   border-radius: 30px;
   font-size: 1.1rem;
   font-weight: 700;
@@ -109,8 +109,9 @@ html, body {
   100% { transform: scale(1); opacity: 1; }
 }
 .cta-btn:hover {
-  background: #fff;
-  color: #ffb300;
+  background: #fffde7;
+  color: #c62828;
+  border: 2px solid #c62828;
 }
 
 /* === Sekcje główne === */
@@ -118,7 +119,7 @@ html, body {
   padding: 4rem 2rem 2rem 2rem;
   max-width: 1100px;
   margin: 0 auto;
-  background: #fff;
+  background: #fffde7;
   border-radius: 18px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.06);
   margin-bottom: 2rem;
@@ -129,7 +130,7 @@ html, body {
   to { opacity: 1; transform: translateY(0); }
 }
 .section h2 {
-  color: #1a237e;
+  color: #b71c1c;
   margin-bottom: 1.5rem;
   font-size: 2rem;
 }
@@ -142,18 +143,19 @@ html, body {
 }
 .oferta-item {
   flex: 1 1 220px;
-  background: #e8eaf6;
+  background: #fff9c4;
   padding: 0.7rem 1rem;
   border-radius: 7px;
   font-weight: 500;
   font-size: 1rem;
-  box-shadow: 0 1px 4px rgba(26,35,126,0.08);
+  box-shadow: 0 1px 4px rgba(183,28,28,0.08);
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
+  color: #b71c1c;
 }
 .oferta-item:hover {
   transform: translateY(-6px) scale(1.04);
-  box-shadow: 0 4px 16px rgba(26,35,126,0.13);
+  box-shadow: 0 4px 16px rgba(183,28,28,0.13);
 }
 .oferta .oferta-item {
   padding: 0.4rem 0.7rem;
@@ -176,13 +178,13 @@ html, body {
   height: 140px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(26,35,126,0.08);
+  box-shadow: 0 2px 8px rgba(183,28,28,0.08);
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .gallery-img:hover {
   transform: scale(1.07);
-  box-shadow: 0 6px 24px rgba(26,35,126,0.18);
+  box-shadow: 0 6px 24px rgba(183,28,28,0.18);
 }
 
 /* === Lightbox (powiększanie zdjęć) === */
@@ -255,29 +257,29 @@ html, body {
   z-index: 2101;
 }
 .lightbox .close, .lightbox .prev, .lightbox .next {
-  color: #fff;
+  color: #b71c1c;
   font-size: 2.5rem;
   cursor: pointer;
   user-select: none;
   transition: color 0.2s;
 }
 .lightbox .close:hover, .lightbox .prev:hover, .lightbox .next:hover {
-  color: #ffb300;
+  color: #ffd600;
 }
 
 /* === Kontakt === */
 .contact-info {
   text-align: center;
-  color: #222;
+  color: #b71c1c;
 }
 
 /* === Stopka === */
 footer {
   text-align: center;
   padding: 2rem 0 1rem 0;
-  color: #888;
+  color: #b71c1c;
   font-size: 1rem;
-  background: none;
+  background: #fffde7;
 }
 
 /* === Responsywność === */
