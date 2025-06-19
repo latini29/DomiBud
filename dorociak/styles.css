@@ -1,0 +1,324 @@
+/* === Podstawowe style strony === */
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #f7f7f7;
+  color: #222;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+html, body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+}
+
+/* === Nawigacja === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1a237e;
+  color: #fff;
+  padding: 0.5rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  animation: slideDown 1s;
+}
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  height: 48px;
+  margin-right: 12px;
+  animation: logoPop 1.2s;
+}
+@keyframes logoPop {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover {
+  color: #ffb300;
+}
+
+/* === Nagłówek strony === */
+.hero {
+  background: linear-gradient(120deg, #3949ab 60%, #ffb300 100%);
+  color: #fff;
+  text-align: center;
+  padding: 5rem 2rem 3rem 2rem;
+  animation: fadeIn 1.2s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* === Przycisk CTA === */
+.cta-btn {
+  background: #ffb300;
+  color: #222;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s, color 0.2s;
+  animation: popIn 1.2s;
+}
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.cta-btn:hover {
+  background: #fff;
+  color: #ffb300;
+}
+
+/* === Sekcje główne === */
+.section {
+  padding: 4rem 2rem 2rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  margin-bottom: 2rem;
+  animation: fadeInUp 1.2s;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.section h2 {
+  color: #1a237e;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+/* === Oferta === */
+.oferta-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.oferta-item {
+  flex: 1 1 220px;
+  background: #e8eaf6;
+  padding: 0.7rem 1rem;
+  border-radius: 7px;
+  font-weight: 500;
+  font-size: 1rem;
+  box-shadow: 0 1px 4px rgba(26,35,126,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.oferta-item:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 4px 16px rgba(26,35,126,0.13);
+}
+.oferta .oferta-item {
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.92rem;
+}
+
+/* === Galeria === */
+.galeria {
+  text-align: center;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+.gallery-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(26,35,126,0.08);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.gallery-img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 24px rgba(26,35,126,0.18);
+}
+
+/* === Lightbox (powiększanie zdjęć) === */
+.lightbox {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(30,30,40,0.7);
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-align: center;
+  overflow: hidden;
+}
+.lightbox.active {
+  display: flex;
+  left: 0;
+}
+.lightbox-content {
+  width: auto;
+  height: auto;
+  max-width: 96vw;
+  max-height: 90vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+  border-radius: 0;
+  box-shadow: none;
+  animation: popIn 0.5s;
+}
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@media (max-width: 600px) {
+  .lightbox-content {
+    max-width: 98vw;
+    max-height: 70vh;
+  }
+}
+.lightbox .close {
+  position: fixed;
+  top: 30px;
+  right: 40px;
+  left: auto;
+  z-index: 2101;
+}
+.lightbox .prev {
+  position: fixed;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2101;
+}
+.lightbox .next {
+  position: fixed;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2101;
+}
+.lightbox .close, .lightbox .prev, .lightbox .next {
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s;
+}
+.lightbox .close:hover, .lightbox .prev:hover, .lightbox .next:hover {
+  color: #ffb300;
+}
+
+/* === Kontakt === */
+.contact-info {
+  text-align: center;
+  color: #222;
+}
+
+/* === Stopka === */
+footer {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  color: #888;
+  font-size: 1rem;
+  background: none;
+}
+
+/* === Responsywność === */
+@media (max-width: 800px) {
+  .section {
+    padding: 2rem 0.5rem 1rem 0.5rem;
+  }
+  .navbar {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+  .logo {
+    height: 36px;
+  }
+}
+@media (max-width: 500px) {
+  .hero h1 {
+    font-size: 1.3rem;
+  }
+  .section h2 {
+    font-size: 1.2rem;
+  }
+  .gallery-img {
+    height: 80px;
+  }
+}
+
+/* === Dodatkowe klasy pomocnicze === */
+.center-nav {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+}
+.column-list {
+  flex-direction: column !important;
+  gap: 1.2rem !important;
+}
+.kontakt h2 {
+  text-align: center;
+} 
